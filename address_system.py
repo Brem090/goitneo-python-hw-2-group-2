@@ -30,7 +30,7 @@ class Record:
 
     def add_phone(self, phone_number):
         new_phone = Phone(phone_number)
-        print(new_phone)
+        self.phones.append(new_phone)
 
     def remove_phone(self, phone_number):
         for phone in self.phones:
@@ -40,7 +40,7 @@ class Record:
     def edit_phone(self, old_phone_number, new_phone_number):
         for phone in self.phones:
             if phone.value == old_phone_number:
-                print(new_phone_number)
+                phone.value = new_phone_number
 
     def find_phone(self, phone_number):
         for phone in self.phones:
@@ -54,7 +54,7 @@ class Record:
 class AddressBook(UserDict):
     def add_record(self, record):
         name_of_record = record.name.value
-        print[name_of_record]
+        self.data[name_of_record] = record
 
     def delete(self, name):
         if name in self.data:
